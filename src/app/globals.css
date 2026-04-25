@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 97% 54%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 97% 54%;
+    --radius: 0.75rem;
+
+    /* Custom Selection Colors */
+    --color-1c398e: #1C398E;
+    --color-155dfc: #155DFC;
+    --color-62748e: #62748E;
+    --color-90a1b9: #90A1B9;
+    --color-f1f5f9: #F1F5F9;
+    --color-162456: #162456;
+    --color-51a2ff: #51A2FF;
+    --color-dbeafe: #DBEAFE;
+    --color-2b7fff: #2B7FFF;
+    --color-e2e8f0: #E2E8F0;
+    --color-f8fafc: #F8FAFC;
+    --color-eff6ff: #EFF6FF;
+    --color-1447e6: #1447E6;
+    --color-0f172b: #0F172B;
+    --color-8ec5ff: #8EC5FF;
+    --color-00a6f4: #00A6F4;
+    --color-00c950: #00C950;
+    --color-1d293d: #1D293D;
+    --color-4f39f6: #4F39F6;
+    --color-bedbff: #BEDBFF;
+    --color-eef2ff: #EEF2FF;
+    --color-f0b100: #F0B100;
+    --color-fb2c36: #FB2C36;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Custom Selection Colors */
+  --color-brand-1c398e: var(--color-1c398e);
+  --color-brand-blue: var(--color-155dfc);
+  --color-brand-62748e: var(--color-62748e);
+  --color-brand-90a1b9: var(--color-90a1b9);
+  --color-brand-f1f5f9: var(--color-f1f5f9);
+  --color-brand-navy: var(--color-162456);
+  --color-brand-sky: var(--color-51a2ff);
+  --color-brand-dbeafe: var(--color-dbeafe);
+  --color-brand-2b7fff: var(--color-2b7fff);
+  --color-brand-e2e8f0: var(--color-e2e8f0);
+  --color-brand-f8fafc: var(--color-f8fafc);
+  --color-brand-eff6ff: var(--color-eff6ff);
+  --color-brand-1447e6: var(--color-1447e6);
+  --color-brand-0f172b: var(--color-0f172b);
+  --color-brand-8ec5ff: var(--color-8ec5ff);
+  --color-brand-cyan: var(--color-00a6f4);
+  --color-brand-green: var(--color-00c950);
+  --color-brand-1d293d: var(--color-1d293d);
+  --color-brand-indigo: var(--color-4f39f6);
+  --color-brand-bedbff: var(--color-bedbff);
+  --color-brand-eef2ff: var(--color-eef2ff);
+  --color-brand-amber: var(--color-f0b100);
+  --color-brand-red: var(--color-fb2c36);
+
+  --font-sans: var(--font-inter);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
