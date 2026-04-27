@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden scroll-smooth">
       
      
       <motion.nav 
@@ -85,12 +85,22 @@ export default function Home() {
 
           
           <div className="hidden lg:flex items-center gap-10 xl:gap-14 text-[12px] font-black text-slate-400 uppercase tracking-[0.15em]">
-            {["The Audit", "Dimensions", "Insights", "Pricing"].map((item) => (
-              <a key={item} href="#" className="relative transition-all hover:text-blue-600 group">
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
-              </a>
-            ))}
+            <a href="#audit" className="relative transition-all hover:text-blue-600 group">
+              The Audit
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
+            </a>
+            <a href="#dimensions" className="relative transition-all hover:text-blue-600 group">
+              Dimensions
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
+            </a>
+            <a href="#insights" className="relative transition-all hover:text-blue-600 group">
+              Insights
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
+            </a>
+            <a href="#pricing" className="relative transition-all hover:text-blue-600 group">
+              Pricing
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
+            </a>
           </div>
 
       
@@ -152,19 +162,46 @@ export default function Home() {
 
               <div className="flex-1 flex flex-col items-center justify-center px-8 gap-12">
                 <div className="flex flex-col items-center gap-10">
-                  {["The Audit", "Dimensions", "Insights", "Pricing"].map((item, i) => (
-                    <motion.a 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1, duration: 0.5 }}
-                      key={item} 
-                      href="#" 
-                      className="text-[16px] font-black text-slate-400 hover:text-blue-600 transition-all uppercase tracking-[0.4em]" 
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item}
-                    </motion.a>
-                  ))}
+                  <motion.a 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0 * 0.1, duration: 0.5 }}
+                    href="#audit" 
+                    className="text-[16px] font-black text-slate-400 hover:text-blue-600 transition-all uppercase tracking-[0.4em]" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    The Audit
+                  </motion.a>
+                  <motion.a 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * 0.1, duration: 0.5 }}
+                    href="#dimensions" 
+                    className="text-[16px] font-black text-slate-400 hover:text-blue-600 transition-all uppercase tracking-[0.4em]" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Dimensions
+                  </motion.a>
+                  <motion.a 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 * 0.1, duration: 0.5 }}
+                    href="#insights" 
+                    className="text-[16px] font-black text-slate-400 hover:text-blue-600 transition-all uppercase tracking-[0.4em]" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Insights
+                  </motion.a>
+                  <motion.a 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 * 0.1, duration: 0.5 }}
+                    href="#pricing" 
+                    className="text-[16px] font-black text-slate-400 hover:text-blue-600 transition-all uppercase tracking-[0.4em]" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Pricing
+                  </motion.a>
                 </div>
                 
                 <motion.div 
@@ -266,23 +303,51 @@ potential.
       </main>
 
     
-      {[
-        { comp: BenchmarkSection, key: "benchmark" },
-        { comp: PillarsSection, key: "pillars" },
-        { comp: AuditFlowSection, key: "flow" },
-        { comp: StatsSection, key: "stats" },
-        { comp: CTASection, key: "cta" }
-      ].map(({ comp: Comp, key }) => (
-        <motion.div
-          key={key}
-          initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <Comp />
-        </motion.div>
-      ))}
+      <motion.div
+        id="audit"
+        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <BenchmarkSection />
+      </motion.div>
+      <motion.div
+        id="dimensions"
+        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <PillarsSection />
+      </motion.div>
+      <motion.div
+        id="flow"
+        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <AuditFlowSection />
+      </motion.div>
+      <motion.div
+        id="insights"
+        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <StatsSection />
+      </motion.div>
+      <motion.div
+        id="pricing"
+        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <CTASection />
+      </motion.div>
 
       <Footer />
     </div>
