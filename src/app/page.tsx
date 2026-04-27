@@ -55,7 +55,7 @@ export default function Home() {
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
         className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-slate-100"
       >
-        <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-6 md:px-12">
+        <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-8 md:px-16">
          
          
           <div className="flex items-center gap-3">
@@ -64,18 +64,27 @@ export default function Home() {
               whileTap={{ scale: 0.9 }}
               className="flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-600/30"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M14 9H10C9.44772 9 9 9.44772 9 10V14C9 14.5523 9.44772 15 10 15H14C14.5523 15 15 14.5523 15 14V10C15 9.44772 14.5523 9 14 9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M14 9H10C9.44772 9 9 9.44772 9 10V14C9 14.5523 9.44772 15 10 15H14C14.5523 15 15 14.5523 15 14V10C15 9.44772 14.5523 9 14 9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M15 2V4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M15 20V22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M2 15H4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M2 9H4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M20 15H22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M20 9H22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M9 2V4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M9 20V22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+
             </motion.div>
-            <span className="text-lg md:text-xl tracking-tighter text-slate-900 uppercase font-black">
+            <span className="text-sm md:text-base tracking-tight text-slate-900 uppercase font-black">
               MAXTRON <span className="text-[#2B7FFF]">AI AUDIT</span>
             </span>
           </div>
 
           
-          <div className="hidden lg:flex items-center gap-10 xl:gap-12 text-[13px] font-black text-slate-400 uppercase tracking-[0.2em]">
+          <div className="hidden lg:flex items-center gap-10 xl:gap-14 text-[12px] font-black text-slate-400 uppercase tracking-[0.15em]">
             {["The Audit", "Dimensions", "Insights", "Pricing"].map((item) => (
               <a key={item} href="#" className="relative transition-all hover:text-blue-600 group">
                 {item}
@@ -85,27 +94,28 @@ export default function Home() {
           </div>
 
       
-          <div className="flex items-center gap-4 md:gap-8">
-            <button className="hidden text-[15px] font-bold text-[#1C398E] transition-colors hover:text-blue-600 sm:block">
+          <div className="flex items-center gap-6 md:gap-10">
+            <button className="hidden xl:block text-[13px] font-bold text-[#1C398E] transition-colors hover:text-blue-600">
               Login
             </button>
             <motion.button 
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(21,93,252,0.3)" }}
               whileTap={{ scale: 0.95 }}
-              className="hidden sm:block rounded-xl bg-[#155DFC] px-6 md:px-10 py-3 md:py-4 text-[14px] font-black text-white uppercase tracking-widest"
+              className="hidden lg:block rounded-xl bg-[#155DFC] px-5 md:px-8 py-2.5 md:py-3 text-[12px] font-black text-white uppercase tracking-wider"
             >
               Get Started
             </motion.button>
             
 
             <button 
-              className="lg:hidden p-2 text-slate-900"
+              className="lg:hidden p-2 text-slate-900 focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
               ) : (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
               )}
             </button>
           </div>
@@ -115,20 +125,61 @@ export default function Home() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 shadow-2xl overflow-hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-0 w-full h-screen bg-white z-[100] flex flex-col"
             >
-              <div className="py-10 px-6 flex flex-col gap-8">
-                {["The Audit", "Dimensions", "Insights", "Pricing"].map((item) => (
-                  <a key={item} href="#" className="text-2xl font-black text-slate-900 uppercase tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>{item}</a>
-                ))}
-                <hr className="border-slate-100" />
-                <div className="flex flex-col gap-4">
-                  <button className="w-full py-5 text-lg font-black text-[#1C398E] border-2 border-[#1C398E]/10 rounded-2xl">Login</button>
-                  <button className="w-full py-5 text-lg font-black text-white bg-[#155DFC] rounded-2xl shadow-xl shadow-blue-600/20">Get Started</button>
+              <div className="flex items-center justify-between px-6 h-20 md:h-24 border-b border-slate-100">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-600/30">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M14 9H10C9.44772 9 9 9.44772 9 10V14C9 14.5523 9.44772 15 10 15H14C14.5523 15 15 14.5523 15 14V10C15 9.44772 14.5523 9 14 9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <span className="text-lg tracking-tighter text-slate-900 uppercase font-black">
+                    MAXTRON <span className="text-[#2B7FFF]">AI AUDIT</span>
+                  </span>
                 </div>
+                <button 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 text-slate-900"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+
+              <div className="flex-1 flex flex-col items-center justify-center px-8 gap-12">
+                <div className="flex flex-col items-center gap-10">
+                  {["The Audit", "Dimensions", "Insights", "Pricing"].map((item, i) => (
+                    <motion.a 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.1, duration: 0.5 }}
+                      key={item} 
+                      href="#" 
+                      className="text-[16px] font-black text-slate-400 hover:text-blue-600 transition-all uppercase tracking-[0.4em]" 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item}
+                    </motion.a>
+                  ))}
+                </div>
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="w-full flex flex-col items-center gap-4 pt-12 border-t border-slate-100"
+                >
+                  <button className="w-64 py-4 text-[12px] font-black text-[#1C398E] uppercase tracking-[0.2em] border border-slate-200 rounded-xl">
+                    Login
+                  </button>
+                  <button className="w-64 py-4 text-[12px] font-black text-white bg-blue-600 uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-blue-600/30">
+                    Get Started
+                  </button>
+                </motion.div>
               </div>
             </motion.div>
           )}
@@ -140,11 +191,11 @@ export default function Home() {
         {/* Animated Background Blobs */}
         <motion.div 
           style={{ y: blobY1 }}
-          className="absolute top-0 left-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-blue-600/5 blur-[120px]" 
+          className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 h-[500px] w-[500px] md:w-[800px] md:h-[800px] rounded-full bg-blue-600/5 blur-[120px]" 
         />
         <motion.div 
           style={{ y: blobY2 }}
-          className="absolute bottom-0 right-1/4 -z-10 h-[600px] w-[600px] rounded-full bg-blue-400/5 blur-[150px]" 
+          className="absolute bottom-0 right-1/2 translate-x-1/2 -z-10 h-[600px] w-[600px] md:w-[900px] md:h-[900px] rounded-full bg-blue-400/5 blur-[150px]" 
         />
         
         <motion.div 
@@ -170,7 +221,7 @@ export default function Home() {
         
             <motion.h1 
               variants={itemVariants}
-              className="mb-8 md:mb-16 max-w-7xl text-5xl sm:text-7xl md:text-9xl lg:text-[11rem] font-black tracking-[-0.05em] text-[#162456] leading-[0.9] md:leading-[0.85]"
+              className="mb-8 md:mb-16 w-full max-w-7xl text-5xl sm:text-7xl md:text-[100px] lg:text-[130px] xl:text-[150px] font-black tracking-[-0.05em] text-[#162456] leading-[0.95] md:leading-[0.85] text-center"
             >
               Master Your <br className="hidden md:block" />
               <span className="text-blue-600 relative inline-block">
@@ -179,7 +230,7 @@ export default function Home() {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1.5, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute bottom-4 left-0 h-[8px] md:h-[12px] bg-blue-100/50 -z-10 rounded-full"
+                  className="absolute bottom-1 md:bottom-4 left-0 h-[6px] md:h-[12px] bg-blue-100/60 -z-10 rounded-full"
                 />
               </span>
             </motion.h1>
@@ -187,7 +238,7 @@ export default function Home() {
           
             <motion.p 
               variants={itemVariants}
-              className="mb-12 md:mb-20 max-w-4xl text-[18px] sm:text-[22px] md:text-[28px] font-medium leading-relaxed text-slate-400 px-4 tracking-tight"
+              className="mb-12 md:mb-20 max-w-3xl text-[18px] sm:text-[20px] md:text-[24px] font-medium leading-relaxed text-slate-500/80 px-4 tracking-tight text-center mx-auto"
             >
              The definitive enterprise benchmark for AI readiness. Maxtron
 provides a surgical audit of your infrastructure, culture, and ROI
@@ -214,7 +265,7 @@ potential.
         </motion.div>
       </main>
 
-      {/* Sections with enhanced reveals */}
+    
       {[
         { comp: BenchmarkSection, key: "benchmark" },
         { comp: PillarsSection, key: "pillars" },
@@ -224,10 +275,10 @@ potential.
       ].map(({ comp: Comp, key }) => (
         <motion.div
           key={key}
-          initial={{ opacity: 0, y: 100, filter: "blur(20px)" }}
+          initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-150px" }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <Comp />
         </motion.div>
