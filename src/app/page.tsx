@@ -105,9 +105,9 @@ export default function Home() {
 
       
           <div className="flex items-center gap-6 md:gap-10">
-            <button className="hidden xl:block text-[13px] font-bold text-[#1C398E] transition-colors hover:text-blue-600">
+            {/* <button className="hidden xl:block text-[13px] font-bold text-[#1C398E] transition-colors hover:text-blue-600">
               Login
-            </button>
+            </button> */}
             <motion.button 
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(21,93,252,0.3)" }}
               whileTap={{ scale: 0.95 }}
@@ -210,9 +210,9 @@ export default function Home() {
                   transition={{ delay: 0.4 }}
                   className="w-full flex flex-col items-center gap-4 pt-12 border-t border-slate-100"
                 >
-                  <button className="w-64 py-4 text-[12px] font-black text-[#1C398E] uppercase tracking-[0.2em] border border-slate-200 rounded-xl">
+                  {/* <button className="w-64 py-4 text-[12px] font-black text-[#1C398E] uppercase tracking-[0.2em] border border-slate-200 rounded-xl">
                     Login
-                  </button>
+                  </button> */}
                   <button className="w-64 py-4 text-[12px] font-black text-white bg-blue-600 uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-blue-600/30">
                     Get Started
                   </button>
