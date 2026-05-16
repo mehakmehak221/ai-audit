@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useContactForm } from "@/context/ContactFormContext";
+import { CALENDLY_URL } from "@/lib/constants";
 
 export default function CTASection() {
+  const { openForm } = useContactForm();
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
       <div className="container mx-auto max-w-7xl">
@@ -92,17 +95,21 @@ export default function CTASection() {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={openForm}
                 className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-white text-[#162456] font-bold rounded-2xl hover:bg-blue-50 transition-all duration-300 shadow-xl shadow-black/20"
               >
                 Begin Free Audit
               </motion.button>
-              <motion.button 
+              <motion.a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all duration-300"
+                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all duration-300 text-center"
               >
-                Consult Experts
-              </motion.button>
+                Book a Consultation
+              </motion.a>
             </motion.div>
           </div>
         </motion.div>

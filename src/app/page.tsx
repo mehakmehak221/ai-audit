@@ -9,8 +9,11 @@ import AuditFlowSection from "@/components/AuditFlowSection";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import { useContactForm } from "@/context/ContactFormContext";
+import { CALENDLY_URL } from "@/lib/constants";
 
 export default function Home() {
+  const { openForm } = useContactForm();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const containerRef = useRef(null);
   
@@ -111,6 +114,7 @@ export default function Home() {
             <motion.button 
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(21,93,252,0.3)" }}
               whileTap={{ scale: 0.95 }}
+              onClick={openForm}
               className="hidden lg:block rounded-xl bg-[#155DFC] px-5 md:px-8 py-2.5 md:py-3 text-[12px] font-black text-white uppercase tracking-wider"
             >
               Get Started
@@ -213,7 +217,13 @@ export default function Home() {
                   {/* <button className="w-64 py-4 text-[12px] font-black text-[#1C398E] uppercase tracking-[0.2em] border border-slate-200 rounded-xl">
                     Login
                   </button> */}
-                  <button className="w-64 py-4 text-[12px] font-black text-white bg-blue-600 uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-blue-600/30">
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      openForm();
+                    }}
+                    className="w-64 py-4 text-[12px] font-black text-white bg-blue-600 uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-blue-600/30"
+                  >
                     Get Started
                   </button>
                 </motion.div>
@@ -283,10 +293,11 @@ potential.
             </motion.p>
             
         
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4">
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={openForm}
                 className="flex items-center gap-4 rounded-2xl bg-[#155DFC] px-10 md:px-16 py-5 md:py-7 text-lg md:text-xl font-black text-white shadow-[0_30px_60px_-15px_rgba(22,36,86,0.4)] transition-all hover:bg-blue-600 group"
               >
                 Begin Audit
@@ -297,6 +308,16 @@ potential.
                   <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </motion.button>
+              <motion.a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-3 rounded-2xl border-2 border-[#155DFC] px-10 md:px-12 py-5 md:py-7 text-lg md:text-xl font-black text-[#155DFC] transition-all hover:bg-blue-50"
+              >
+                Book a Call
+              </motion.a>
             </motion.div>
           </motion.div>
         </motion.div>
